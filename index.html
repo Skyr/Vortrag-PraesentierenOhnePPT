@@ -252,7 +252,7 @@
 			<article>
 				<h3>Klassisch-modern: html5slides</h3>
         <p>Ursprung: <a href="https://code.google.com/p/html5slides/">Google html5 slide template</a>.</p>
-        <p>Facelifting, Überarbeitung und Erweiterung durch Benjamin Erbs <a href="https://github.com/berb/html5slides-uulm">html5slides-uulm</a>.</p>
+        <p>Facelifting, Überarbeitung und Erweiterung durch Benjamin Erbs <a href="https://github.com/berb/html5slides-uulm">html5slides-uulm</a> (Demo: Dieser Foliensatz :-).</p>
         <p>Handlich, aber nicht so schön strukturiert wie reveal.js</p>
         <p>Speaker notes!</p>
         <p>PDF-Export: I'm <a href="https://github.com/Skyr/html5slides-cccs/tree/printing">working on that</a>...</p>
@@ -275,6 +275,44 @@
 
 		<section>
 			<header>Missing link: slideasm</header>
+
+			<article>
+        <h3>The missing link...</h3>
+        <p>html5slides und reveal.js sind für mich heiße Kandidaten</p>
+        <p>html5slides: Fehlt einfache Eingabemöglichkeit für simple Folien (Markdown ist toll!)</p>
+        <p>Beiden fehlt das Zerlegen in Einzeldateien</p>
+        <p>→ Helfer-Skript schreiben!</p>
+			</article>
+
+			<article>
+        <h3>slideasm - the slide assembler</h3>
+        <p><a href="https://github.com/Skyr/slideasm">slideasm</a>: A work in progress :-)</p>
+        <p>Inhalt jeder Folie in einzelner Datei</p>
+        <p>Präsentations-Framework: Platzhalter für tatsächlichen Inhalt</p>
+        <p>Konfigurationsdatei: Definiert tatsächlichen Foliensatz (Framework-Rumpf, welche Folien in welcher Reihenfolge</p>
+        <p>slideasm fügt Framework-Rumpf + Inhalt zusammen</p>
+      </article>
+
+			<article>
+        <h3>Konfigurationsdateien</h3>
+        <p>Include von weiteren Config-Dateien möglich: Ermöglicht Definition von Kapiteln, Standard-Foliensätzen, ...</p>
+        <p>Jede Config-Datei entspricht einem Foliensatz - ist also nur noch die Information über die Zusammenstellung, nicht mehr der tatsächliche Inhalt</p>
+			</article>
+
+      <article>
+        <h3>Organisation der Daten</h3>
+        <p>Je Folie: Ein Verzeichnis mit Folien-Schnipsel plus aller benötigten Dateien (Bilder)</p>
+        <p>„Shared Folder“ für häufig verwendete Cliparts, etc.</p>
+        <p>Versionierung all dieser Daten in einem Repository: Immer ein konsistenter Blick auf die gesamten Daten</p>
+      </article>
+
+      <article>
+        <h3>Funktionalität</h3>
+        <p>Parsen der Config-Datei</p>
+        <p>Lesen der Folien-Dateien</p>
+        <p>Entweder in Folien-Verzeichnisse referenzieren oder benötigte Dateien zusammensammeln: Pfade müssen angepaßt werden</p>
+        <p>Zusatzfunktionen denkbar, etwa Metadaten (z.B. für CC-Hinweise) sammeln</p>
+      </article>
 		</section>
 
 	</div>
