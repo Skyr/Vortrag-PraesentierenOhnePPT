@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+<!--
+  UUlm Style
+
+  Author: Benjamin Erb
+
+  URL: https://github.com/berb/html5slides-uulm
+-->
+<!--
+  CCCS Style
+
+  Author: Stefan Schlott
+
+  URL: https://github.com/Skyr/html5slides-cccs
+-->
+
+<html>
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <link href="lib/styles.css" media="screen" rel="stylesheet" type="text/css" />
+	<link href="lib/cccs/cccs.css" media="screen" rel="stylesheet" type="text/css" />
+	<meta charset='utf-8' />
+	<script src='lib/slides.js'></script>
+	<link href="lib/animate/animate.css" media="screen" rel="stylesheet" type="text/css" />
+  <script type="text/javascript">
+    function animate(element, params) {
+      var animstyle = params;
+      var p = params.split(' ');
+      if (p.length>1) {
+        element = p[1];
+        animstyle = p[0];
+      }
+      $(element).removeClass("animated flash shake bounce tada swing wobble pulse flip flipInX flipOutX flipInY flipOutY fadeIn fadeInUp fadeInDown fadeInLeft fadeInRight fadeInUpBig fadeInDownBig fadeInLeftBig fadeInRightBig fadeOut fadeOutUp fadeOutDown fadeOutLeft fadeOutRight fadeOutUpBig fadeOutDownBig fadeOutLeftBig fadeOutRightBig bounceIn bounceInUp bounceInDown bounceInLeft bounceInRight bounceOut bounceOutUp bounceOutDown bounceOutLeft bounceOutRight rotateIn rotateInUpLeft rotateInDownLeft rotateInUpRight rotateInDownRight rotateOut rotateOutUpLeft rotateOutDownLeft rotateOutUpRight rotateOutDownRight hinge rollIn rollOut");
+      $(element).addClass("animated "+animstyle);
+    }
+  </script>
+  <style type="text/css">
+    .slides.template-cccs-in section > article.title-slide #title {
+      left: 33%;
+      top: 72%;
+    }
+    .slides.template-cccs-in section > article.title-slide #author {
+      bottom: 3%;
+    }
+    .slides.template-cccs-in section > article.title-slide #subtitle {
+      left: 33%;
+    }
+    .slides section > article > ul {
+      margin-top: 0.5em;
+    }
+    .centerfirst td:first-child {
+      text-align: center;
+    }
+  </style>
+	<title>Präsentieren ohne Powerpoint</title>
+</head>
+
+<body style='display: none'>
+
+	<div class='slides layout-normal template-cccs-in'>
+		<section>
+			<article class='title-slide'>
+				<h1 id="title">Präsentieren ohne Powerpoint</h1>
+				<h2 id="author">
+          Stefan Schlott
+				</h2>
+				<h2 id="subtitle">
+					...oder warum PPT &amp; Co. mehr saugen als Vakuum
+				</h2>
+				<p>
+					<img id="title-header" src='assets/images/header.jpg'/>
+					<img id="cccs-logo" src='lib/cccs/logo.png'/>
+				</p>
+			</article>
+<!--
+			<article>
+				<h3>Contents</h3>
+				<nav class="toc" />
+			</article>
+-->
+		</section>
+
+		<section>
+			<header>Warum Powerpoint saugt</header>
+
+			<article class='fill' style='background-color: #000'>
+        <div class="build">
+          <img src="assets/images/dbppt-1.jpg" class="nofill" width="33%" style='position: absolute; left:0%; top:10%;' />
+          <img src="assets/images/dbppt-2.jpg" class="nofill" width="33%" style='position: absolute; left:33%; top:10%;' />
+          <img src="assets/images/dbppt-3.jpg" class="nofill" width="33%" style='position: absolute; left:66%; top:10%;' />
+          <div style="position: absolute; top:45%; left:10%; width:80%">
+            <center style="line-height: 100px; font-size: 100px; color: white;">Death by Powerpoint</center>
+          </div>
+        </div>
+			</article>
+
+			<article class='fill'>
+				<q> Power corrupts and PowerPoint corrupts absolutely. </q>
+				<div class='author'>Vint Cerf</div>
+			</article>
+
+			<article>
+				<h3>Was ich will!</h3>
+        <p>Schicke Optik</p>
+        <p>Aktzeptable Usability</p>
+        <p>Exportmöglichkeit zu PDF</p>
+        <p>Versionskontrolle z.B. mit git</p>
+        <p>Kooperatives Erstellen von Foliensätzen</p>
+        <p>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</p>
+			</article>
+
+			<article>
+				<h3>Versionskontrolle</h3>
+        <p>Vernünftige Versionskontrolle, nicht irgendwie!</p>
+        <p>Sinnvolle Diffs, Unterschiede zwischen Versionen müssen erkennbar sein</p>
+        <p>Merge-Operationen müssen möglich sein</p>
+        <p>→ Menschenverständliches, ASCII-basiertes Format</p>
+			</article>
+
+			<article>
+				<h3>Kooperatives Erstellen von Foliensätzen</h3>
+        <p>Gemeinsame Vortragsvorbereitung, etc.</p>
+        <p>Voraussetzung: Versionskontrolle</p>
+        <p>Idealerweise Verteilung auf Subdokumente, sonst ständige Merges</p>
+        <p>→ Zusätzlich: Ausplitten in Einzeldateien</p>
+			</article>
+
+			<article>
+				<h3>Recyclen/aktualisieren/rekombinieren</h3>
+        <p>Einzelfolien oder Kapitel werden öfters recyclet, als man zunächst denkt! Beispielsweise...</p>
+        <ul>
+          <li>Die „über mich“-Folie</li>
+          <li>Die Firmen-Vorstellung</li>
+          <li>Einleitungskapitel</li>
+          <li>Ähnlicher Vortrag in anderem Kontext</li>
+        </ul>
+        <p>In welchem Foliensatz war das nochmal aktuell? Wo hatte ich nochmals die neueste Version?</p>
+        <p>→ Umkopieren von Folien ist die Pest! Struktur „Folie - Foliengruppe - Foliensatz“ ist Gold!</p>
+			</article>
+
+			<article class="fill">
+				<h3>Powerpoint &amp; Co.</h3>
+        <img src="assets/images/deadbulb.jpg" style="opacity:0.3;" />
+        <table class="centerfirst">
+          <tr><td>(✓)</td><td>Schicke Optik</td></tr>
+          <tr><td>(✓)</td><td>Aktzeptable Usability</td></tr>
+          <tr><td>✓</td><td>Exportmöglichkeit zu PDF</td></tr>
+          <tr><td>-</td><td>Versionskontrolle z.B. mit git</td></tr>
+          <tr><td>-</td><td>Kooperatives Erstellen von Foliensätzen</td></tr>
+          <tr><td>-</td><td>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</td></tr>
+        </table>
+        <div class="build"><center><br/><img class="nofill" width="20%" src="assets/images/thumbs_down_sign.svg" /></center></div>
+			</article>
+
+		</section>
+
+		<section>
+			<header>Alternativen</header>
+
+			<article class="xsmaller">
+        <h3>LaTeX Beamer (<a href="assets/examples/latexbeamer.pdf">Beispiel</a>)</h3>
+        <pre>
+\documentclass[hyperref={pdfpagelabels=false}]{beamer}
+\usepackage[german]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\begin{document}
+\begin{frame}[plain]
+\titlepage
+\end{frame}
+\end{document}</pre>
+        <p>Ziemliches Gefrickel mit geringen Gestaltungsmöglichkeiten (sonst Riesengefrickel)</p>
+        <p>LaTeX-Installation mit unterschiedlichen Pakten (in unterschiedlichen Versionen) sind Pain</p>
+      </article>
+
+			<article class="fill">
+        <h3>LaTeX Beamer</h3>
+        <img src="assets/images/deadbulb.jpg" style="opacity:0.3;" />
+        <table class="centerfirst">
+          <tr><td>-</td><td>Schicke Optik</td></tr>
+          <tr><td>-</td><td>Aktzeptable Usability</td></tr>
+          <tr><td>✓</td><td>Exportmöglichkeit zu PDF</td></tr>
+          <tr><td>✓</td><td>Versionskontrolle z.B. mit git</td></tr>
+          <tr><td>✓</td><td>Kooperatives Erstellen von Foliensätzen</td></tr>
+          <tr><td>✓</td><td>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</td></tr>
+        </table>
+        <div class="build"><center><br/><img class="nofill" width="20%" src="assets/images/thumbs_down_sign.svg" /></center></div>
+			</article>
+
+			<article>
+				<h3>Bling-Bling: Prezi et. al.</h3>
+        <p>Prezi ist fancy und soooo cool... aber Flash! Alternativen:</p>
+        <ul>
+          <li><a href="https://bitbucket.org/bgoetzmann/grezi/wiki/Home">grezi</a>: Groovy + JavaFX</li>
+          <li><a href="http://code.google.com/p/jessyink/">JessyInk</a>: Inkscape-Patch. Unmaintained(?), unkomfortabel</li>
+          <li><a href="http://dizzy.metafnord.org/">dizzy.js</a>: Cooler Start, aber Entwicklungsstillstand? Unkomfortabel</li>
+          <li><a href="https://github.com/bartaz/impress.js/">Impress.js</a> (<a href="assets/examples/impress.js/index.html#/title" target="_blank">Demo</a>)</li>
+        </ul>
+        <p>Impress.js: Erstellen ziemliches Gefrickel, manuelles Berechnen von X- und Y-Koordinaten (yuck!)</p>
+			</article>
+
+			<article class="fill">
+        <h3>Impress.js</h3>
+        <img src="assets/images/deadbulb.jpg" style="opacity:0.3;" />
+        <table class="centerfirst">
+          <tr><td>✓</td><td>Schicke Optik</td></tr>
+          <tr><td>-</td><td>Aktzeptable Usability</td></tr>
+          <tr><td>-</td><td>Exportmöglichkeit zu PDF</td></tr>
+          <tr><td>✓</td><td>Versionskontrolle z.B. mit git</td></tr>
+          <tr><td>(✓)</td><td>Kooperatives Erstellen von Foliensätzen</td></tr>
+          <tr><td>(-)</td><td>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</td></tr>
+        </table>
+        <div class="build"><center><br/><img class="nofill" width="20%" src="assets/images/thumbs_down_sign.svg" /></center></div>
+			</article>
+
+			<article>
+				<h3>Ein wenig Bling-Bling: Reveal.js</h3>
+        <p><a href="https://github.com/hakimel/reveal.js">reveal.js</a> - Browserpräsentation mit „etwas Bling-Bling“: Folien-Weiterschalten sowohl vertikal als auch horizontal (<a href="assets/examples/reveal.js/index.html" target="_blank">Demo</a>)</p>
+        <p>Exposé-Übersicht!</p>
+        <p>Markdown-Support für einfache Folien!</p>
+        <p>Sauberes Markup, schöne API!</p>
+        <p>PDF-Export - aber nur mit Chrome</p>
+        <p>Speaker Notes - aber nur, wenn als node.js-Anwendung gestartet</a>
+			</article>
+
+			<article class="fill">
+        <h3>Reveal.js</h3>
+        <img src="assets/images/bulb.jpg" style="opacity:0.3;" />
+        <table class="centerfirst">
+          <tr><td>✓</td><td>Schicke Optik</td></tr>
+          <tr><td>✓</td><td>Aktzeptable Usability</td></tr>
+          <tr><td>(✓)</td><td>Exportmöglichkeit zu PDF</td></tr>
+          <tr><td>✓</td><td>Versionskontrolle z.B. mit git</td></tr>
+          <tr><td>✓</td><td>Kooperatives Erstellen von Foliensätzen</td></tr>
+          <tr><td>(-)</td><td>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</td></tr>
+        </table>
+			</article>
+
+			<article>
+				<h3>Klassisch-modern: html5slides</h3>
+        <p>Ursprung: <a href="https://code.google.com/p/html5slides/">Google html5 slide template</a>.</p>
+        <p>Facelifting, Überarbeitung und Erweiterung durch Benjamin Erbs <a href="https://github.com/berb/html5slides-uulm">html5slides-uulm</a>.</p>
+        <p>Handlich, aber nicht so schön strukturiert wie reveal.js</p>
+        <p>Speaker notes!</p>
+        <p>PDF-Export: I'm <a href="https://github.com/Skyr/html5slides-cccs/tree/printing">working on that</a>...</p>
+			</article>
+
+			<article class="fill">
+        <h3>html5slides</h3>
+        <img src="assets/images/bulb.jpg" style="opacity:0.3;" />
+        <table class="centerfirst">
+          <tr><td>✓</td><td>Schicke Optik</td></tr>
+          <tr><td>✓</td><td>Aktzeptable Usability</td></tr>
+          <tr><td>✓</td><td>Exportmöglichkeit zu PDF</td></tr>
+          <tr><td>✓</td><td>Versionskontrolle z.B. mit git</td></tr>
+          <tr><td>✓</td><td>Kooperatives Erstellen von Foliensätzen</td></tr>
+          <tr><td>(-)</td><td>Recyclen und neues Zusammenstellen von Foliensätzen (bei Erhalt der Versions-History)</td></tr>
+        </table>
+			</article>
+
+		</section>
+
+		<section>
+			<header>Missing link: slideasm</header>
+		</section>
+
+	</div>
+
+</body>
+</html>
